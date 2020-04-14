@@ -369,10 +369,16 @@ func getSchema(
 		// type UserFilter {
 		// 	search: String
 		// 	where: UserWhere
+		// 	limit: Int
+		// 	page: Int
 		// }
 		schema.WriteString("input " + model.Name + "Filter {")
 		schema.WriteString("\n")
 		schema.WriteString(indent + "search: String")
+		schema.WriteString("\n")
+		schema.WriteString(indent + "limit: Int")
+		schema.WriteString("\n")
+		schema.WriteString(indent + "page: Int")
 		schema.WriteString("\n")
 		schema.WriteString(indent + "where: " + model.Name + "Where")
 		schema.WriteString("\n")
