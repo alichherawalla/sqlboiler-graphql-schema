@@ -1,4 +1,4 @@
-module github.com/wednesday-solutions/sqlboiler-graphql-schema
+module github.com/aliChherawalla/sqlboiler-graphql-schema
 
 go 1.14
 
