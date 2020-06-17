@@ -361,6 +361,17 @@ func getSchema(
 		s.WriteString("}")
 		s.WriteString(lineBreak)
 		s.WriteString(lineBreak)
+
+		s.WriteString("type Paginated" + model.Name + " {")
+		s.WriteString(lineBreak)
+		s.WriteString("items: [" + model.Name + "!]!")
+		s.WriteString(lineBreak)
+		s.WriteString("pageNumber: Int")
+		s.WriteString(lineBreak)
+		s.WriteString("totalCount: Int")
+		s.WriteString("}")
+		s.WriteString(lineBreak)
+		s.WriteString(lineBreak)
 	}
 
 	// Add helpers for filtering lists
@@ -455,7 +466,7 @@ func getSchema(
 		}
 		s.WriteString(strcase.ToLowerCamel(modelPluralName) + "(filter: " + model.Name + "Filter" + paginiationParameter + ")")
 		s.WriteString(": ")
-		s.WriteString("[" + model.Name + "!]!")
+		s.WriteString("Paginated" + model.Name + "!")
 		s.WriteString(joinedDirectives)
 		s.WriteString(lineBreak)
 
